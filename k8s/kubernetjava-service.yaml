@@ -1,0 +1,12 @@
+apiVersion: v1 # Kubernetes API version
+kind: Service # Tipo de recurso de Kubernetes que estamos creando
+metadata: # Metadatos del tipo de recurso que estamos creando
+  name: kubernetjava-service
+spec:
+  selector:
+    app: kubernetjava-deploy
+  ports:
+    - protocol: "TCP" # realiza la transmisión de datos entre los participantes de una red informática.
+      port: 8080 # El puerto en el que se ejecuta el servicio en el clúster
+      targetPort: 8080 # El puerto expuesto por el servicio
+  type: NodePort # tipo de servicio  COMUNICACION ENTRE CLIENTES EXTRENOS Y UN POD DENTRO DEL CLUSTER

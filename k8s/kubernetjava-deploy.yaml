@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment # Tipo de recurso de Kubernetes que estamos creando
+metadata:
+  name: kubernetjava-deploy
+spec:
+  selector:
+    matchLabels:
+      app: kubernetjava-deploy
+  replicas: 2 # Número de réplicas que se crearán para esta implementación
+  template:
+    metadata:
+      labels:
+        app: kubernetjava-deploy
+    spec:
+      containers:
+        - name: kubernetjava-deploy
+          image: kubernetjava:1.0  # Imagen que se usará para los contenedores en el clúster
+          imagePullPolicy: IfNotPresent # Kubernetes siempre extraerá la imagen del Repositorio.
+          ports:
+            - containerPort: 8080 # El puerto en el que se ejecuta el contenedor en el clúster
