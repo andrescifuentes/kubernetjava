@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: kubernetjava-deploy
-          image: kubernetjava:1.0  # Imagen que se usará para los contenedores en el clúster
+          image: kubernetjava:v2.#{Build.BuildId}#  # Imagen que se usará para los contenedores en el clúster
           imagePullPolicy: IfNotPresent # Kubernetes siempre extraerá la imagen del Repositorio.
           ports:
             - containerPort: 8080 # El puerto en el que se ejecuta el contenedor en el clúster
